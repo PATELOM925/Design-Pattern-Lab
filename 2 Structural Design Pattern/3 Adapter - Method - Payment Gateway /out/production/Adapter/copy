@@ -1,0 +1,35 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Paytm p = new Paytm();
+        PaymentGateway PaytmAdapter = (PaymentGateway) new PaytmAdapter(p);
+        Processor processor = new Processor(PaytmAdapter);
+        processor.processPayment(100.00);
+
+        // Process payment using StripeGateway
+        RazorPay r = new RazorPay();
+        PaymentGateway RazorPayAdapter = (PaymentGateway) new RazorPayAdapter(r);
+        paymentProcessor = new PaymentProcessor(stripeAdapter);
+        paymentProcessor.processPayment(50.00);
+    }
+}
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Process payment using Paytm
+        Paytm paytm = new Paytm();
+        PaytmAdapter paytmAdapter = new PaytmAdapter(paytm);
+        Processor paymentProcessor = new Processor(paytmAdapter);
+        paymentProcessor.processPayment(100.00);
+
+        // Process payment using RazorPay
+        RazorPay razorPay = new RazorPay();
+        RazorPayAdapter razorpayAdapter = new RazorPayAdapter(razorPay);
+        Processor p = new Processor(razorPay);
+        p.processPayment(50.00);
+
+    }
+}
